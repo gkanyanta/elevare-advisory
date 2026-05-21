@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — The Elevare Advisory</title>
+  <meta name="description" content="Contact The Elevare Advisory. Based in Lusaka, Zambia — partnering with institutions across Southern Africa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .faq-list { margin-top: 2rem; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 0; cursor: pointer; font-weight: 600; color: var(--navy);
+      font-size: 0.95rem; gap: 1rem;
+      background: none; border: none; width: 100%; text-align: left;
+    }
+    .faq-question i { color: var(--gold); transition: transform 0.3s; flex-shrink: 0; }
+    .faq-question.open i { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      font-size: 0.92rem; color: var(--muted);
+    }
+    .faq-answer.open { max-height: 300px; padding-bottom: 1.25rem; }
+    .map-placeholder {
+      width: 100%; height: 300px; border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.75rem; margin-top: 2rem; border: 1px solid var(--border);
+    }
+    .map-placeholder i { font-size: 2.5rem; color: var(--gold); }
+    .map-placeholder p { color: rgba(255,255,255,0.7); font-size: 0.9rem; text-align: center; max-width: 220px; }
+    .map-placeholder strong { color: var(--white); display: block; font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="navbar scrolled">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <span class="nav-logo-name">The Elevare</span>
+          <span class="nav-logo-tag">Advisory</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="approach.html">Our Approach</a>
+          <a href="contact.html" class="btn btn-primary nav-cta active">Get in Touch</a>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span> Contact</div>
+      <h1 class="page-hero-title">Get In Touch</h1>
+      <p class="page-hero-sub">Whether you're ready to engage or simply want to explore how we can help, we'd welcome a conversation.</p>
+    </div>
+  </section>
+
+  <!-- ── CONTACT SECTION ── -->
+  <section class="section contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Info -->
+        <div class="reveal-left">
+          <span class="section-label">Contact Information</span>
+          <h3>Let's Start a Conversation</h3>
+          <div class="gold-line"></div>
+          <p>Every engagement begins with a discovery conversation. Whether you have a specific brief in mind or are still scoping your challenge, we're ready to listen and explore how we can help.</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-item-text">
+                <strong>Office Location</strong>
+                <p>Lusaka, Zambia</p>
+                <p>Southern Africa</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-item-text">
+                <strong>Email</strong>
+                <p><a href="mailto:info@elevareadvisory.com" style="color:var(--gold);">info@elevareadvisory.com</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="contact-item-text">
+                <strong>LinkedIn</strong>
+                <p>The Elevare Advisory</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="contact-item-text">
+                <strong>Response Time</strong>
+                <p>We typically respond within 1–2 business days.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="map-placeholder">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <p><strong>Lusaka, Zambia</strong>Headquarters of The Elevare Advisory</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="reveal-right">
+          <div class="contact-form">
+            <h3 style="margin-bottom:0.25rem;">Send Us a Message</h3>
+            <p style="font-size:0.88rem;margin-bottom:1.5rem;">Fill in the form below and we'll get back to you within 1–2 business days.</p>
+
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="e.g. Chanda" required />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="e.g. Mwale" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="you@organisation.com" required />
+              </div>
+              <div class="form-group">
+                <label for="organisation">Organisation</label>
+                <input type="text" id="organisation" name="organisation" placeholder="Your institution or company" />
+              </div>
+              <div class="form-group">
+                <label for="service">Service of Interest</label>
+                <select id="service" name="service">
+                  <option value="" disabled selected>Select a service…</option>
+                  <option>Research &amp; Evidence</option>
+                  <option>Strategic Coordination</option>
+                  <option>Capacity Building</option>
+                  <option>Policy Enhancement</option>
+                  <option>Programme Evaluation</option>
+                  <option>Executive Dialogues</option>
+                  <option>General Enquiry</option>
+                  <option>Multiple Services</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" placeholder="Tell us about your challenge, project, or question — as much detail as you're comfortable sharing at this stage." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+              <p class="form-notice">Your information is kept confidential and will not be shared with third parties.</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="section" style="background:var(--light);">
+    <div class="container">
+      <div class="grid-2" style="align-items:start;gap:4rem;">
+        <div class="reveal-left">
+          <span class="section-label">FAQs</span>
+          <h2 class="section-title" style="font-size:2rem;">Frequently Asked Questions</h2>
+          <div class="gold-line"></div>
+          <p>Answers to the questions we hear most often from prospective clients.</p>
+        </div>
+        <div class="faq-list reveal-right">
+          <div class="faq-item">
+            <button class="faq-question">
+              What types of clients does Elevare work with?
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">We work with multilateral institutions (UNDP, UNICEF, USAID and others), government ministries, corporate institutions, development partners, and foundations across Zambia and Southern Africa.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How long does a typical engagement last?
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">Engagement length varies by scope. A focused research study may run 6–12 weeks. A full institutional transformation programme may span 6–18 months. We are flexible and can design phased approaches where appropriate.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you work outside Zambia?
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">Yes. While we are headquartered in Lusaka, our work extends across the Southern African region. We have experience delivering engagements in multiple countries and are familiar with regional institutional contexts.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can we combine multiple services in one engagement?
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">Absolutely — in fact, some of our most impactful engagements combine research, strategic coordination, and capacity building into an integrated programme. We will design the right combination based on your specific challenge.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What is the best way to start an engagement?
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">The best starting point is a brief discovery conversation — no formal brief required. Use the contact form above or reach out directly via email, and we will schedule an initial call to understand your context and explore how we can help.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-name">The Elevare</div>
+          <div class="footer-logo-tag">Advisory</div>
+          <p class="footer-tagline">Evidence. Dialogue. Leadership. From insight to sustained institutional growth.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#team">Leadership Team</a></li>
+            <li><a href="about.html#values">Mission &amp; Values</a></li>
+            <li><a href="approach.html">Our Approach</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html">Research &amp; Evidence</a></li>
+            <li><a href="services.html">Strategic Coordination</a></li>
+            <li><a href="services.html">Capacity Building</a></li>
+            <li><a href="services.html">Policy Enhancement</a></li>
+            <li><a href="services.html">Programme Evaluation</a></li>
+            <li><a href="services.html">Executive Dialogues</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="contact.html">Get In Touch</a></li>
+            <li><a href="mailto:info@elevareadvisory.com">info@elevareadvisory.com</a></li>
+            <li><a href="#">Lusaka, Zambia</a></li>
+            <li><a href="#">LinkedIn: The Elevare Advisory</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 The Elevare Advisory Ltd. All rights reserved.</span>
+        <span>Lusaka, Zambia &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* FAQ accordion */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('open');
+        document.querySelectorAll('.faq-question').forEach(b => { b.classList.remove('open'); b.nextElementSibling.classList.remove('open'); });
+        if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
+      });
+    });
+  </script>
+</body>
+</html>

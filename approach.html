@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Approach — The Elevare Advisory</title>
+  <meta name="description" content="Discover The Elevare Advisory's proven 5-step methodology: Discovery, Analysis, Strategy, Implementation, and Monitoring." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .approach-full { background: var(--light); }
+    .approach-step-full {
+      display: grid; grid-template-columns: 120px 1fr; gap: 2.5rem;
+      padding: 3rem 0; border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .approach-step-full:last-child { border-bottom: none; }
+    .step-num-large {
+      font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 800;
+      color: transparent; -webkit-text-stroke: 2px var(--gold);
+      line-height: 1; text-align: center;
+    }
+    .step-body-full { padding-top: 0.5rem; }
+    .step-body-full h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .step-body-full .step-subtitle { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
+    .step-body-full p { margin-bottom: 1rem; }
+    .step-delivers { margin-top: 1.25rem; }
+    .step-delivers h5 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--navy); margin-bottom: 0.6rem; }
+    .step-delivers ul { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .step-delivers ul li {
+      font-size: 0.82rem; color: var(--muted);
+      background: var(--white); border: 1px solid var(--border);
+      padding: 0.3rem 0.75rem; border-radius: 100px;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .step-delivers ul li i { color: var(--gold); font-size: 0.7rem; }
+
+    .principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .principle-card {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg); padding: 2rem;
+      text-align: center;
+    }
+    .principle-card i { font-size: 1.8rem; color: var(--gold); margin-bottom: 1rem; }
+    .principle-card h4 { color: var(--white); margin-bottom: 0.5rem; }
+    .principle-card p  { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+
+    @media (max-width: 700px) {
+      .approach-step-full { grid-template-columns: 1fr; gap: 1rem; }
+      .step-num-large { font-size: 2.5rem; text-align: left; }
+      .principles-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="navbar scrolled">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <span class="nav-logo-name">The Elevare</span>
+          <span class="nav-logo-tag">Advisory</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="approach.html" class="active">Our Approach</a>
+          <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span> Our Approach</div>
+      <h1 class="page-hero-title">Our Approach</h1>
+      <p class="page-hero-sub">A structured, evidence-led methodology that takes every engagement from initial discovery through to continuous, measurable impact.</p>
+    </div>
+  </section>
+
+  <!-- ── INTRO ── -->
+  <section class="section-sm" style="background:var(--white);">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:4rem;">
+        <div class="reveal-left">
+          <span class="section-label">Why Methodology Matters</span>
+          <h2 class="section-title" style="font-size:2rem;">Structure is What Turns Strategy into Results</h2>
+          <div class="gold-line"></div>
+          <p>Many advisory engagements produce excellent recommendations that never get implemented. The Elevare Advisory was built specifically to solve this problem. Our 5-step approach is designed to close the gap between insight and action — at every stage of the engagement.</p>
+        </div>
+        <div class="reveal-right" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div style="background:var(--light);border-radius:var(--radius);padding:1.5rem;text-align:center;border-top:3px solid var(--gold);">
+            <div style="font-size:2rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--navy);">5</div>
+            <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-top:0.25rem;">Step Process</div>
+          </div>
+          <div style="background:var(--light);border-radius:var(--radius);padding:1.5rem;text-align:center;border-top:3px solid var(--navy);">
+            <div style="font-size:2rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--navy);">100%</div>
+            <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-top:0.25rem;">Evidence-Led</div>
+          </div>
+          <div style="background:var(--light);border-radius:var(--radius);padding:1.5rem;text-align:center;border-top:3px solid var(--navy);">
+            <div style="font-size:2rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--navy);">Bespoke</div>
+            <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-top:0.25rem;">Every Engagement</div>
+          </div>
+          <div style="background:var(--light);border-radius:var(--radius);padding:1.5rem;text-align:center;border-top:3px solid var(--gold);">
+            <div style="font-size:2rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--navy);">Built-In</div>
+            <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-top:0.25rem;">Follow-Through</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5 STEPS ── -->
+  <section class="section approach-full">
+    <div class="container">
+      <div class="section-center reveal">
+        <span class="section-label">The Methodology</span>
+        <h2 class="section-title">A Proven 5-Step Approach</h2>
+        <div class="gold-line gold-line-center"></div>
+      </div>
+
+      <div style="margin-top:3rem;">
+        <div class="approach-step-full reveal">
+          <div class="step-num-large">01</div>
+          <div class="step-body-full">
+            <div class="step-subtitle">Phase One</div>
+            <h3>Discovery</h3>
+            <p>We begin every engagement by deeply understanding your context, your challenges, and your strategic objectives. This is not a box-ticking exercise — it is the foundation on which all subsequent work rests. We engage your key stakeholders, review existing evidence, and map the institutional landscape before committing to any approach.</p>
+            <p>Discovery ensures that our advice is grounded in your reality, not in generic frameworks or assumptions imported from other contexts.</p>
+            <div class="step-delivers">
+              <h5>Typical Deliverables</h5>
+              <ul>
+                <li><i class="fa-solid fa-circle"></i> Context mapping report</li>
+                <li><i class="fa-solid fa-circle"></i> Stakeholder interviews</li>
+                <li><i class="fa-solid fa-circle"></i> Document review</li>
+                <li><i class="fa-solid fa-circle"></i> Problem statement</li>
+                <li><i class="fa-solid fa-circle"></i> Engagement scope brief</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="approach-step-full reveal">
+          <div class="step-num-large">02</div>
+          <div class="step-body-full">
+            <div class="step-subtitle">Phase Two</div>
+            <h3>Analysis</h3>
+            <p>We apply data-driven analysis and evidence benchmarks to interpret what the Discovery phase has uncovered. This includes quantitative data analysis, qualitative sense-making, and benchmarking against comparable institutions or contexts within the Southern African region and globally where relevant.</p>
+            <p>Our analysis is always conducted with an eye toward action — we synthesise findings into patterns and insights that can inform concrete decisions.</p>
+            <div class="step-delivers">
+              <h5>Typical Deliverables</h5>
+              <ul>
+                <li><i class="fa-solid fa-circle"></i> Evidence synthesis report</li>
+                <li><i class="fa-solid fa-circle"></i> Data analysis outputs</li>
+                <li><i class="fa-solid fa-circle"></i> Benchmark comparison</li>
+                <li><i class="fa-solid fa-circle"></i> Gap analysis</li>
+                <li><i class="fa-solid fa-circle"></i> Diagnostic brief</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="approach-step-full reveal">
+          <div class="step-num-large">03</div>
+          <div class="step-body-full">
+            <div class="step-subtitle">Phase Three</div>
+            <h3>Strategy</h3>
+            <p>We develop tailored, decision-ready strategic frameworks — not lengthy documents that sit on shelves. Our strategy products are built for use: they are clear, prioritised, and linked directly to implementation pathways. We co-create these with your leadership team to ensure genuine buy-in and ownership.</p>
+            <p>Every strategy we develop answers three questions: What needs to change? How do we make it happen? How will we know it's working?</p>
+            <div class="step-delivers">
+              <h5>Typical Deliverables</h5>
+              <ul>
+                <li><i class="fa-solid fa-circle"></i> Strategic framework</li>
+                <li><i class="fa-solid fa-circle"></i> Theory of change</li>
+                <li><i class="fa-solid fa-circle"></i> Prioritised action plan</li>
+                <li><i class="fa-solid fa-circle"></i> Implementation roadmap</li>
+                <li><i class="fa-solid fa-circle"></i> Decision-ready brief</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="approach-step-full reveal">
+          <div class="step-num-large">04</div>
+          <div class="step-body-full">
+            <div class="step-subtitle">Phase Four</div>
+            <h3>Implementation</h3>
+            <p>We do not disappear after handing over a strategy document. The Elevare Advisory offers active implementation support — embedding with your team as needed to support execution, navigate obstacles, facilitate key decisions, and maintain momentum through the inherent complexity of institutional change.</p>
+            <p>This is where most advisory firms step back. We step forward.</p>
+            <div class="step-delivers">
+              <h5>Typical Deliverables</h5>
+              <ul>
+                <li><i class="fa-solid fa-circle"></i> Implementation support retainer</li>
+                <li><i class="fa-solid fa-circle"></i> Facilitation of key sessions</li>
+                <li><i class="fa-solid fa-circle"></i> Progress reporting</li>
+                <li><i class="fa-solid fa-circle"></i> Obstacle resolution</li>
+                <li><i class="fa-solid fa-circle"></i> Stakeholder coordination</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="approach-step-full reveal">
+          <div class="step-num-large">05</div>
+          <div class="step-body-full">
+            <div class="step-subtitle">Phase Five</div>
+            <h3>Monitoring</h3>
+            <p>We design monitoring systems from the outset — not as an afterthought. During the Monitoring phase, we track agreed outcomes against defined metrics, identify what is working and what needs to be refined, and support your team in building the internal capacity to sustain this learning loop independently.</p>
+            <p>Our goal is for every institution we work with to emerge stronger, smarter, and more self-sufficient — not dependent on perpetual consulting support.</p>
+            <div class="step-delivers">
+              <h5>Typical Deliverables</h5>
+              <ul>
+                <li><i class="fa-solid fa-circle"></i> M&amp;E framework</li>
+                <li><i class="fa-solid fa-circle"></i> Progress dashboards</li>
+                <li><i class="fa-solid fa-circle"></i> Learning reviews</li>
+                <li><i class="fa-solid fa-circle"></i> Outcome reports</li>
+                <li><i class="fa-solid fa-circle"></i> Refinement recommendations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GUIDING PRINCIPLES ── -->
+  <section class="section why-section">
+    <div class="container">
+      <div class="section-center reveal">
+        <span class="section-label">What Guides Us</span>
+        <h2 class="section-title" style="color:var(--white);">Guiding Principles</h2>
+        <div class="gold-line gold-line-center"></div>
+      </div>
+      <div class="principles-grid">
+        <div class="principle-card reveal reveal-delay-1">
+          <i class="fa-solid fa-flask"></i>
+          <h4>Evidence Over Opinion</h4>
+          <p>Every recommendation we make is grounded in data, research, and contextual analysis — never intuition alone.</p>
+        </div>
+        <div class="principle-card reveal reveal-delay-2">
+          <i class="fa-solid fa-person-chalkboard"></i>
+          <h4>Human-Centric Lens</h4>
+          <p>Systems change only when people change. We keep human dynamics at the centre of every strategy we design.</p>
+        </div>
+        <div class="principle-card reveal reveal-delay-3">
+          <i class="fa-solid fa-rocket"></i>
+          <h4>Practical Impact</h4>
+          <p>We measure our success by what actually changes on the ground — not by the quality of the documents we produce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-banner reveal">
+    <div class="container">
+      <h2>Ready to Begin Your Engagement?</h2>
+      <p>Every engagement starts with a discovery conversation. Reach out and let's explore how our approach can serve your institution.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Start a Conversation <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="services.html" class="btn btn-outline">See Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-name">The Elevare</div>
+          <div class="footer-logo-tag">Advisory</div>
+          <p class="footer-tagline">Evidence. Dialogue. Leadership. From insight to sustained institutional growth.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#team">Leadership Team</a></li>
+            <li><a href="about.html#values">Mission &amp; Values</a></li>
+            <li><a href="approach.html">Our Approach</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html">Research &amp; Evidence</a></li>
+            <li><a href="services.html">Strategic Coordination</a></li>
+            <li><a href="services.html">Capacity Building</a></li>
+            <li><a href="services.html">Policy Enhancement</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="contact.html">Get In Touch</a></li>
+            <li><a href="mailto:info@elevareadvisory.com">info@elevareadvisory.com</a></li>
+            <li><a href="#">Lusaka, Zambia</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 The Elevare Advisory Ltd. All rights reserved.</span>
+        <span>Lusaka, Zambia &nbsp;|&nbsp; <a href="#">Privacy Policy</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
