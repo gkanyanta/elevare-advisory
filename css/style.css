@@ -153,6 +153,40 @@ p  { color: var(--muted); font-size: 1rem; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--transition); }
 
+/* ── Nav Dropdown ── */
+.nav-dropdown-wrap { position: relative; }
+.nav-dropdown-trigger {
+  display: flex; align-items: center; gap: 0.3rem;
+  color: rgba(255,255,255,0.85); font-size: 0.9rem; font-weight: 500;
+  padding: 0.4rem 0.85rem; border-radius: var(--radius);
+  transition: var(--transition); cursor: pointer;
+}
+.nav-dropdown-trigger:hover, .nav-dropdown-wrap:hover .nav-dropdown-trigger {
+  color: var(--white); background: rgba(255,255,255,0.1);
+}
+.nav-chevron { font-size: 0.65rem; transition: transform 0.3s; }
+.nav-dropdown-wrap:hover .nav-chevron { transform: rotate(180deg); }
+.nav-dropdown {
+  position: absolute; top: calc(100% + 0.4rem); left: 50%;
+  transform: translateX(-50%);
+  min-width: 230px; background: var(--navy-mid);
+  border-radius: var(--radius); box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255,255,255,0.12);
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  padding: 0.4rem 0; z-index: 200;
+}
+.nav-dropdown-wrap:hover .nav-dropdown { opacity: 1; visibility: visible; }
+.nav-dropdown a {
+  display: block; padding: 0.55rem 1.2rem;
+  color: rgba(255,255,255,0.82); font-size: 0.875rem; font-weight: 500;
+  border-radius: 0; background: none;
+}
+.nav-dropdown a:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+
+/* ── Team Photo ── */
+.team-photo { width: 100%; height: 220px; object-fit: cover; object-position: top; display: block; }
+
 /* ── Slideshow / Hero ── */
 .slideshow {
   position: relative; width: 100%; height: 100vh; min-height: 600px;
