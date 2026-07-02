@@ -196,8 +196,9 @@ p  { color: var(--muted); font-size: 1rem; }
   position: absolute; inset: 0;
   opacity: 0; transition: opacity 1s ease;
   background-size: cover; background-position: center;
+  pointer-events: none;
 }
-.slide.active { opacity: 1; }
+.slide.active { opacity: 1; pointer-events: auto; }
 .slide-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(135deg, rgba(12,31,63,0.82) 0%, rgba(12,31,63,0.55) 60%, rgba(12,31,63,0.35) 100%);
