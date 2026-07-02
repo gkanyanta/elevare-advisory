@@ -2,6 +2,8 @@
    THE ELEVARE ADVISORY — Main JavaScript
    ============================================ */
 
+window.Elevare = window.Elevare || {};
+
 /* ── Navbar scroll effect ── */
 const navbar = document.querySelector('.navbar');
 if (navbar) {
@@ -37,8 +39,11 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   }
 });
 
-/* ── Slideshow ── */
-(function initSlideshow() {
+/* ── Slideshow ──
+   Re-runnable so it can be re-initialised after content.js
+   rebuilds the slides/dots from CMS data. */
+function initSlideshow() {
+  const slideshow = document.querySelector('.slideshow');
   const slides   = document.querySelectorAll('.slide');
   const dots     = document.querySelectorAll('.dot');
   const prevBtn  = document.querySelector('.slide-prev');
@@ -46,6 +51,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   const bar      = document.querySelector('.slide-progress-bar');
 
   if (!slides.length) return;
+  if (slideshow && slideshow._elevareCleanup) slideshow._elevareCleanup();
 
   let current  = 0;
   let timer    = null;
@@ -80,33 +86,50 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   goTo(0);
   startAuto();
 
-  prevBtn?.addEventListener('click', () => { goTo(current - 1); startAuto(); });
-  nextBtn?.addEventListener('click', () => { goTo(current + 1); startAuto(); });
+  const onPrev = () => { goTo(current - 1); startAuto(); };
+  const onNext = () => { goTo(current + 1); startAuto(); };
+  prevBtn?.addEventListener('click', onPrev);
+  nextBtn?.addEventListener('click', onNext);
   dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); startAuto(); }));
 
   /* Pause on hover */
-  const slideshow = document.querySelector('.slideshow');
-  slideshow?.addEventListener('mouseenter', () => clearInterval(timer));
+  const onEnter = () => clearInterval(timer);
+  slideshow?.addEventListener('mouseenter', onEnter);
   slideshow?.addEventListener('mouseleave', startAuto);
 
   /* Keyboard */
-  document.addEventListener('keydown', (e) => {
+  const onKeydown = (e) => {
     if (e.key === 'ArrowLeft')  { goTo(current - 1); startAuto(); }
     if (e.key === 'ArrowRight') { goTo(current + 1); startAuto(); }
-  });
+  };
+  document.addEventListener('keydown', onKeydown);
 
   /* Touch swipe */
   let touchStartX = 0;
-  slideshow?.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-  slideshow?.addEventListener('touchend', e => {
+  const onTouchStart = e => { touchStartX = e.touches[0].clientX; };
+  const onTouchEnd = e => {
     const delta = touchStartX - e.changedTouches[0].clientX;
     if (Math.abs(delta) > 50) { goTo(delta > 0 ? current + 1 : current - 1); startAuto(); }
-  });
-})();
+  };
+  slideshow?.addEventListener('touchstart', onTouchStart, { passive: true });
+  slideshow?.addEventListener('touchend', onTouchEnd);
 
-/* ── Scroll reveal ── */
-(function initReveal() {
-  const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  if (slideshow) {
+    slideshow._elevareCleanup = () => {
+      clearInterval(timer);
+      document.removeEventListener('keydown', onKeydown);
+    };
+  }
+}
+initSlideshow();
+window.Elevare.initSlideshow = initSlideshow;
+
+/* ── Scroll reveal ──
+   Re-runnable so newly-injected CMS content (cards, lists) also animates in. */
+let _revealObserver = null;
+function initReveal() {
+  const els = document.querySelectorAll('.reveal:not(.visible), .reveal-left:not(.visible), .reveal-right:not(.visible)');
+  if (_revealObserver) _revealObserver.disconnect();
   if (!els.length) return;
 
   const observer = new IntersectionObserver((entries) => {
@@ -118,8 +141,11 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
+  _revealObserver = observer;
   els.forEach(el => observer.observe(el));
-})();
+}
+initReveal();
+window.Elevare.initReveal = initReveal;
 
 /* ── Contact form ── */
 const contactForm = document.getElementById('contactForm');
@@ -155,7 +181,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ── Counter animation for stats ── */
+/* ── Counter animation for stats ──
+   Re-runnable so stats rebuilt from CMS data still animate. */
 function animateCounter(el, target) {
   const duration = 1800;
   const start = performance.now();
@@ -168,15 +195,39 @@ function animateCounter(el, target) {
   requestAnimationFrame(update);
 }
 
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = parseInt(el.dataset.target, 10);
-      animateCounter(el, target);
-      statsObserver.unobserve(el);
-    }
-  });
-}, { threshold: 0.5 });
+let _statsObserver = null;
+function initStatsCounters() {
+  if (_statsObserver) _statsObserver.disconnect();
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        animateCounter(el, target);
+        statsObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
 
-document.querySelectorAll('.stat-number[data-target]').forEach(el => statsObserver.observe(el));
+  _statsObserver = statsObserver;
+  document.querySelectorAll('.stat-number[data-target]').forEach(el => statsObserver.observe(el));
+}
+initStatsCounters();
+window.Elevare.initStatsCounters = initStatsCounters;
+
+/* ── FAQ accordion ──
+   Re-runnable so an FAQ list rebuilt from CMS data still expands/collapses. */
+function initFaqAccordion() {
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    if (btn._elevareBound) return;
+    btn._elevareBound = true;
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-question').forEach(b => { b.classList.remove('open'); b.nextElementSibling.classList.remove('open'); });
+      if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
+    });
+  });
+}
+initFaqAccordion();
+window.Elevare.initFaqAccordion = initFaqAccordion;
