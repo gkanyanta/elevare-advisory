@@ -91,18 +91,19 @@ p  { color: var(--muted); font-size: 1rem; }
 
 /* ── Logo ── */
 .nav-logo-wrap {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   padding: 4px 10px;
-  line-height: 0;
   transition: var(--transition);
   flex-shrink: 0;
 }
 .nav-logo-wrap:hover { opacity: 0.85; }
-.nav-logo-img { height: 104px; width: auto; display: block; }
-.footer-logo-img {
-  height: 144px; width: auto;
-  display: block; margin-bottom: 1rem;
+.nav-logo-icon { height: 46px; width: auto; display: block; flex-shrink: 0; }
+.footer-logo {
+  display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;
 }
+.footer-logo-icon { height: 56px; width: auto; display: block; flex-shrink: 0; }
 
 /* ── Navigation ── */
 .navbar {
@@ -124,12 +125,13 @@ p  { color: var(--muted); font-size: 1rem; }
 .nav-logo-name {
   font-family: 'Playfair Display', serif;
   font-size: 1.45rem; font-weight: 700;
-  color: var(--white); letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--white); letter-spacing: 0.02em;
 }
 .nav-logo-tag {
   font-size: 0.6rem; font-weight: 600;
-  letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--gold); margin-top: 1px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold); margin-top: 3px;
 }
 .nav-links {
   display: flex; align-items: center; gap: 0.25rem;
@@ -313,6 +315,12 @@ p  { color: var(--muted); font-size: 1rem; }
   border-radius: 0 var(--radius) var(--radius) 0;
   font-style: italic; color: var(--navy); font-size: 1.05rem;
 }
+.foundations-list { margin: 0.5rem 0 1.75rem; padding-left: 1.25rem; border-left: 3px solid var(--border); }
+.foundation-item { margin-bottom: 1.5rem; }
+.foundation-item:last-child { margin-bottom: 0; }
+.foundation-item h4 { display: flex; align-items: center; gap: 0.6rem; color: var(--navy); margin-bottom: 0.4rem; }
+.foundation-item h4 i { color: var(--gold); font-size: 0.9rem; }
+.foundation-item p { margin-bottom: 0; font-size: 0.95rem; }
 
 /* ── Services ── */
 .services-section { background: var(--light); }
@@ -514,14 +522,14 @@ p  { color: var(--muted); font-size: 1rem; }
 .footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 4rem 0 0; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; }
 .footer-brand { }
-.footer-logo-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); }
-.footer-logo-tag  { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+.footer-logo-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; color: var(--white); }
+.footer-logo-tag  { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-top: 3px; display: block; }
 .footer-tagline   { margin-top: 1rem; font-size: 0.9rem; max-width: 260px; }
 .footer-col h5 { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
 .footer-col ul li { margin-bottom: 0.6rem; }
 .footer-col ul li a { font-size: 0.88rem; color: rgba(255,255,255,0.6); transition: color var(--transition); }
 .footer-col ul li a:hover { color: var(--gold); }
-.footer-social { display: flex; gap: 0.6rem; margin-top: 1.5rem; }
+.footer-social { display: flex; flex-wrap: wrap; margin-top: 1.5rem; }
 .social-btn {
   width: 36px; height: 36px; border-radius: 50%;
   background: rgba(255,255,255,0.08);
@@ -529,7 +537,10 @@ p  { color: var(--muted); font-size: 1rem; }
   display: flex; align-items: center; justify-content: center;
   color: rgba(255,255,255,0.7); font-size: 0.85rem;
   transition: var(--transition);
+  flex-shrink: 0;
+  margin-right: 0.6rem;
 }
+.social-btn:last-child { margin-right: 0; }
 .social-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -594,6 +605,9 @@ p  { color: var(--muted); font-size: 1rem; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .approach-steps::before { display: none; }
   .slide-arrows { display: none; }
+  .nav-logo-icon { height: 36px; }
+  .nav-logo-name { font-size: 1.15rem; }
+  .nav-logo-tag { font-size: 0.5rem; letter-spacing: 0.06em; }
 }
 @media (max-width: 480px) {
   .grid-4 { grid-template-columns: 1fr; }

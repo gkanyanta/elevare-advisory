@@ -34,6 +34,14 @@
     return el;
   }
 
+  function slugify(str) {
+    return (str || '')
+      .toLowerCase()
+      .replace(/&/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+  }
+
   function iconTextChip(className, icon, label) {
     return h('div', { class: className }, [
       h('i', { class: icon || 'fa-solid fa-circle' }, []),
@@ -294,7 +302,7 @@
             );
           }
           grid.appendChild(
-            h('div', { class: 'service-full reveal' }, [
+            h('div', { class: 'service-full reveal', id: slugify(service.title) }, [
               h('div', { class: 'service-full-icon' }, [h('i', { class: service.icon || 'fa-solid fa-circle' }, [])]),
               h('div', { class: 'service-full-body' }, body),
             ]),

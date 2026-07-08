@@ -17,6 +17,7 @@
       padding: 2.5rem; box-shadow: var(--shadow);
       border: 1px solid var(--border);
       transition: var(--transition);
+      scroll-margin-top: 110px;
     }
     .service-full:hover { box-shadow: var(--shadow-lg); border-color: var(--gold); }
     .service-full-icon {
@@ -54,7 +55,11 @@
     <div class="container">
       <div class="nav-inner">
         <a href="index.html" class="nav-logo-wrap">
-          <img src="logo-light.png" alt="Elevare Advisory" class="nav-logo-img" />
+          <img src="logo-icon.png" alt="" class="nav-logo-icon" aria-hidden="true" />
+          <div class="nav-logo">
+            <span class="nav-logo-name">Elevare Advisory</span>
+            <span class="nav-logo-tag">Research | Strategy | Capacity Building</span>
+          </div>
         </a>
         <div class="nav-links">
           <a href="index.html">Home</a>
@@ -98,7 +103,7 @@
     <div class="container">
       <div class="services-full-grid">
 
-        <div class="service-full reveal">
+        <div class="service-full reveal" id="research-evidence">
           <div class="service-full-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
           <div class="service-full-body">
             <span class="service-tag">Pillar 01: Research &amp; Evidence</span>
@@ -118,7 +123,7 @@
           </div>
         </div>
 
-        <div class="service-full reveal">
+        <div class="service-full reveal" id="capacity-building">
           <div class="service-full-icon"><i class="fa-solid fa-users-gear"></i></div>
           <div class="service-full-body">
             <span class="service-tag">Pillar 02: Capacity Building</span>
@@ -137,7 +142,7 @@
           </div>
         </div>
 
-        <div class="service-full reveal">
+        <div class="service-full reveal" id="strategy-performance">
           <div class="service-full-icon"><i class="fa-solid fa-chess-king"></i></div>
           <div class="service-full-body">
             <span class="service-tag">Pillar 03: Strategy &amp; Performance</span>
@@ -195,8 +200,14 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="logo-light.png" alt="Elevare Advisory" class="footer-logo-img" />
-          <p class="footer-tagline">Evidence. Dialogue. Leadership. From insight to sustained institutional growth.</p>
+          <div class="footer-logo">
+            <img src="logo-icon.png" alt="" class="footer-logo-icon" aria-hidden="true" />
+            <div>
+              <span class="footer-logo-name">Elevare Advisory</span>
+              <span class="footer-logo-tag">Research | Strategy | Capacity Building</span>
+            </div>
+          </div>
+          <p class="footer-tagline">Evidence. Direction. Capacity. From insight to sustained institutional growth.</p>
           <div class="footer-social">
             <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="#" class="social-btn" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
