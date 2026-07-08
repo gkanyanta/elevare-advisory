@@ -1,5 +1,5 @@
 /* ============================================
-   THE ELEVARE ADVISORY — CMS content loader
+   THE ELEVARE ADVISORY - CMS content loader
    Fetches editable content from Sanity and overlays it
    onto the static markup already in the page. If the
    fetch fails for any reason, the hardcoded HTML already

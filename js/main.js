@@ -1,5 +1,5 @@
 /* ============================================
-   THE ELEVARE ADVISORY — Main JavaScript
+   THE ELEVARE ADVISORY - Main JavaScript
    ============================================ */
 
 window.Elevare = window.Elevare || {};
